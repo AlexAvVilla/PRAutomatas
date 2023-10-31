@@ -127,13 +127,13 @@ public class AFDGUI extends javax.swing.JFrame {
         }
 
         if (contieneNumeros && contieneLetras) {
-            this.txtFinal.setText("La cadena" + cadena +"es rechazada" + " por el AFD.");
+            this.txtFinal.setText("La cadena " + cadena +" es rechazada" + " por el AFD.");
         } else if (contieneNumeros) {
             boolean aceptada = aceptaCadena(cadena);
             this.txtFinal.setText("La cadena '" + cadena + "' " + (aceptada ? "es aceptada" : "es rechazada") + " por el AFD.");
         } else if (contieneLetras) {
             boolean aceptada = Cadena(cadena);
-            this.txtFinal.setText("La cadena letras '" + cadena + "' " + (aceptada ? "es aceptada" : "es rechazada") + " por el AFD.");
+            this.txtFinal.setText("La cadena '" + cadena + "' " + (aceptada ? "es aceptada" : "es rechazada") + " por el AFD.");
         } else {
             this.txtFinal.setText("El campo no contiene ni números ni letras.");
         }

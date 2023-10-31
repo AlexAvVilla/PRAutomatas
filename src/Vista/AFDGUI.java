@@ -134,6 +134,18 @@ public class AFDGUI extends javax.swing.JFrame {
         transiciones.put("q1", new HashMap<>());
         transiciones.put("q2", new HashMap<>());
         
+        for (char letra : alfabeto) {
+        if (letra == 'c' || letra == 'l') {
+            transiciones.get("q0").put(letra, "q0");
+            transiciones.get("q1").put(letra, "q1");
+            transiciones.get("q2").put(letra, "q2");
+        } else {
+            transiciones.get("q0").put(letra, "q1");
+            transiciones.get("q1").put(letra, "q2");
+            transiciones.get("q2").put(letra, "q2");
+        }
+    }
+        
         transiciones.get("q0").put('0', "q2");
         transiciones.get("q0").put('1', "q2");
         transiciones.get("q0").put('2', "q2");

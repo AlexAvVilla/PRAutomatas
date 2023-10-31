@@ -111,68 +111,6 @@ public class AFDGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCadenaActionPerformed
 
     private void btnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarActionPerformed
-        /*HashMap<String, HashMap<Character, String>> transiciones;
-        String estadoInicial;
-        String[] estadosAceptacion;
-
-    
-        // Definimos los estados del AFD
-        String[] estados = {"q0", "q1", "q2"};
-        // Definimos el alfabeto
-        char[] alfabeto = {'0', '1'};
-
-        // Definimos la función de transición
-        transiciones = new HashMap<>();
-        transiciones.put("q0", new HashMap<>());
-        transiciones.put("q1", new HashMap<>());
-        transiciones.put("q2", new HashMap<>());
-
-        transiciones.get("q0").put('0', "q0");
-        transiciones.get("q0").put('1', "q1");
-        transiciones.get("q1").put('0', "q2");
-        transiciones.get("q1").put('1', "q1");
-        transiciones.get("q2").put('0', "q0");
-        transiciones.get("q2").put('1', "q1");
-
-        // Definimos el estado inicial
-        estadoInicial = "q0";
-
-        // Definimos el conjunto de estados de aceptación
-        estadosAceptacion = new String[]{"q2"};
-    
-    
-        String cadena = this.txtCadena.getText();
-    
-        String estadoActual = estadoInicial;
-
-        for (char simbolo : cadena.toCharArray()) {
-            if (!transiciones.get(estadoActual).containsKey(simbolo)) {
-                System.out.println("La Cadena ingresada : " + cadena+" no es aceptada");
-                this.txtFinal.setText("La Cadena ingresada : " + cadena+" no es aceptada");
-                this.txtCadena.setText("");
-            }
-            estadoActual = transiciones.get(estadoActual).get(simbolo);
-        }
-
-        for (String estadoAceptacion : estadosAceptacion) {
-            if (estadoActual.equals(estadoAceptacion)) {
-                System.out.println("La Cadena ingresada : " + cadena+" es aceptada");
-                this.txtFinal.setText("La Cadena ingresada : " + cadena+" es aceptada");
-                this.txtCadena.setText("");
-            }
-        }
-
-        System.out.println("La Cadena ingresada : " + cadena+" no es aceptada");
-        this.txtFinal.setText("La Cadena ingresada : " + cadena+" no es aceptada");
-        this.txtCadena.setText("");
-    
-
-    
-       
-        String cadena1 = "10101";
-        String cadena2 = "11001101";*/
-        
-        
         String cadena = this.txtCadena.getText();
         boolean aceptada = aceptaCadena(cadena);
         this.txtFinal.setText("La cadena '" + cadena + "' " + (aceptada ? "es aceptada" : "es rechazada") + " por el AFD.");
@@ -195,7 +133,7 @@ public class AFDGUI extends javax.swing.JFrame {
         transiciones.put("q0", new HashMap<>());
         transiciones.put("q1", new HashMap<>());
         transiciones.put("q2", new HashMap<>());
-
+        
         transiciones.get("q0").put('0', "q2");
         transiciones.get("q0").put('1', "q2");
         transiciones.get("q0").put('2', "q2");
@@ -206,17 +144,18 @@ public class AFDGUI extends javax.swing.JFrame {
         transiciones.get("q0").put('7', "q2");
         transiciones.get("q0").put('8', "q2");
         transiciones.get("q0").put('9', "q2");
-        transiciones.get("q2").put('0', "q0");
-        transiciones.get("q2").put('1', "q0");
-        transiciones.get("q2").put('2', "q0");
-        transiciones.get("q2").put('3', "q0");
-        transiciones.get("q2").put('4', "q0");
-        transiciones.get("q2").put('5', "q0");
-        transiciones.get("q2").put('6', "q0");
-        transiciones.get("q2").put('7', "q0");
-        transiciones.get("q2").put('8', "q0");
-        transiciones.get("q2").put('9', "q0");
-        
+
+        transiciones.get("q2").put('0', "q2");
+        transiciones.get("q2").put('1', "q2");
+        transiciones.get("q2").put('2', "q2");
+        transiciones.get("q2").put('3', "q2");
+        transiciones.get("q2").put('4', "q2");
+        transiciones.get("q2").put('5', "q2");
+        transiciones.get("q2").put('6', "q2");
+        transiciones.get("q2").put('7', "q2");
+        transiciones.get("q2").put('8', "q2");
+        transiciones.get("q2").put('9', "q2");
+  
         transiciones.get("q0").put('A', "q1");
         transiciones.get("q0").put('B', "q1");
         transiciones.get("q0").put('C', "q1");
@@ -243,6 +182,173 @@ public class AFDGUI extends javax.swing.JFrame {
         transiciones.get("q0").put('X', "q1");
         transiciones.get("q0").put('Y', "q1");
         transiciones.get("q0").put('Z', "q1");
+        
+        transiciones.get("q2").put('a', "q1");
+        transiciones.get("q2").put('b', "q1");
+        transiciones.get("q2").put('c', "q1");
+        transiciones.get("q2").put('d', "q1");
+        transiciones.get("q2").put('e', "q1");
+        transiciones.get("q2").put('f', "q1");
+        transiciones.get("q2").put('g', "q1");
+        transiciones.get("q2").put('h', "q1");
+        transiciones.get("q2").put('i', "q1");
+        transiciones.get("q2").put('j', "q1");
+        transiciones.get("q2").put('k', "q1");
+        transiciones.get("q2").put('l', "q1");
+        transiciones.get("q2").put('m', "q1");
+        transiciones.get("q2").put('n', "q1");
+        transiciones.get("q2").put('o', "q1");
+        transiciones.get("q2").put('p', "q1");
+        transiciones.get("q2").put('q', "q1");
+        transiciones.get("q2").put('r', "q1");
+        transiciones.get("q2").put('s', "q1");
+        transiciones.get("q2").put('t', "q1");
+        transiciones.get("q2").put('u', "q1");
+        transiciones.get("q2").put('v', "q1");
+        transiciones.get("q2").put('w', "q1");
+        transiciones.get("q2").put('x', "q1");
+        transiciones.get("q2").put('y', "q1");
+        transiciones.get("q2").put('z', "q1");
+
+        transiciones.get("q1").put('a', "q2");
+        transiciones.get("q1").put('b', "q2");
+        transiciones.get("q1").put('c', "q2");
+        transiciones.get("q1").put('d', "q2");
+        transiciones.get("q1").put('e', "q2");
+        transiciones.get("q1").put('f', "q2");
+        transiciones.get("q1").put('g', "q2");
+        transiciones.get("q1").put('h', "q2");
+        transiciones.get("q1").put('i', "q2");
+        transiciones.get("q1").put('j', "q2");
+        transiciones.get("q1").put('k', "q2");
+        transiciones.get("q1").put('l', "q2");
+        transiciones.get("q1").put('m', "q2");
+        transiciones.get("q1").put('n', "q2");
+        transiciones.get("q1").put('o', "q2");
+        transiciones.get("q1").put('p', "q2");
+        transiciones.get("q1").put('q', "q2");
+        transiciones.get("q1").put('r', "q2");
+        transiciones.get("q1").put('s', "q2");
+        transiciones.get("q1").put('t', "q2");
+        transiciones.get("q1").put('u', "q2");
+        transiciones.get("q1").put('v', "q2");
+        transiciones.get("q1").put('w', "q2");
+        transiciones.get("q1").put('x', "q2");
+        transiciones.get("q1").put('y', "q2");
+        transiciones.get("q1").put('z', "q2");
+ 
+        //000110
+        //11101110
+        //Aca
+        //Vaso
+        
+        // Definimos el estado inicial
+        estadoInicial = "q0";
+
+        // Definimos el conjunto de estados de aceptación
+        estadosAceptacion = new String[]{"q2"};
+        
+        String estadoActual = estadoInicial;
+
+        for (char simbolo : cadena.toCharArray()) {
+            if (!transiciones.get(estadoActual).containsKey(simbolo)) {
+                return false; // El símbolo no está en el alfabeto
+            }
+            estadoActual = transiciones.get(estadoActual).get(simbolo);
+        }
+
+        for (String estadoAceptacion : estadosAceptacion) {
+            if (estadoActual.equals(estadoAceptacion)) {
+                return true; // La cadena fue aceptada
+            }
+        }
+        
+        return false;
+    }
+    
+    public boolean Cadena(String cadena) {
+        HashMap<String, HashMap<Character, String>> transiciones;
+        transiciones = new HashMap<>();
+        
+        transiciones.put("q0", new HashMap<>());
+        transiciones.put("q1", new HashMap<>());
+        transiciones.put("q2", new HashMap<>());
+        
+        transiciones.get("q0").put('0', "q2");
+        transiciones.get("q0").put('1', "q2");
+        transiciones.get("q0").put('2', "q2");
+        transiciones.get("q0").put('3', "q2");
+        transiciones.get("q0").put('4', "q2");
+        transiciones.get("q0").put('5', "q2");
+        transiciones.get("q0").put('6', "q2");
+        transiciones.get("q0").put('7', "q2");
+        transiciones.get("q0").put('8', "q2");
+        transiciones.get("q0").put('9', "q2");
+
+        transiciones.get("q0").put('0', "q0");
+        transiciones.get("q0").put('1', "q0");
+        transiciones.get("q0").put('2', "q0");
+        transiciones.get("q0").put('3', "q0");
+        transiciones.get("q0").put('4', "q0");
+        transiciones.get("q0").put('5', "q0");
+        transiciones.get("q0").put('6', "q0");
+        transiciones.get("q0").put('7', "q0");
+        transiciones.get("q0").put('8', "q0");
+        transiciones.get("q0").put('9', "q0");
+  
+        transiciones.get("q0").put('A', "q1");
+        transiciones.get("q0").put('B', "q1");
+        transiciones.get("q0").put('C', "q1");
+        transiciones.get("q0").put('D', "q1");
+        transiciones.get("q0").put('E', "q1");
+        transiciones.get("q0").put('F', "q1");
+        transiciones.get("q0").put('G', "q1");
+        transiciones.get("q0").put('H', "q1");
+        transiciones.get("q0").put('I', "q1");
+        transiciones.get("q0").put('J', "q1");
+        transiciones.get("q0").put('K', "q1");
+        transiciones.get("q0").put('L', "q1");
+        transiciones.get("q0").put('M', "q1");
+        transiciones.get("q0").put('N', "q1");
+        transiciones.get("q0").put('O', "q1");
+        transiciones.get("q0").put('P', "q1");
+        transiciones.get("q0").put('Q', "q1");
+        transiciones.get("q0").put('R', "q1");
+        transiciones.get("q0").put('S', "q1");
+        transiciones.get("q0").put('T', "q1");
+        transiciones.get("q0").put('U', "q1");
+        transiciones.get("q0").put('V', "q1");
+        transiciones.get("q0").put('W', "q1");
+        transiciones.get("q0").put('X', "q1");
+        transiciones.get("q0").put('Y', "q1");
+        transiciones.get("q0").put('Z', "q1");
+        
+        transiciones.get("q1").put('a', "q1");
+        transiciones.get("q1").put('b', "q1");
+        transiciones.get("q1").put('c', "q1");
+        transiciones.get("q1").put('d', "q1");
+        transiciones.get("q1").put('e', "q1");
+        transiciones.get("q1").put('f', "q1");
+        transiciones.get("q1").put('g', "q1");
+        transiciones.get("q1").put('h', "q1");
+        transiciones.get("q1").put('i', "q1");
+        transiciones.get("q1").put('j', "q1");
+        transiciones.get("q1").put('k', "q1");
+        transiciones.get("q1").put('l', "q1");
+        transiciones.get("q1").put('m', "q1");
+        transiciones.get("q1").put('n', "q1");
+        transiciones.get("q1").put('o', "q1");
+        transiciones.get("q1").put('p', "q1");
+        transiciones.get("q1").put('q', "q1");
+        transiciones.get("q1").put('r', "q1");
+        transiciones.get("q1").put('s', "q1");
+        transiciones.get("q1").put('t', "q1");
+        transiciones.get("q1").put('u', "q1");
+        transiciones.get("q1").put('v', "q1");
+        transiciones.get("q1").put('w', "q1");
+        transiciones.get("q1").put('x', "q1");
+        transiciones.get("q1").put('y', "q1");
+        transiciones.get("q1").put('z', "q1");
 
         transiciones.get("q1").put('a', "q2");
         transiciones.get("q1").put('b', "q2");
@@ -271,76 +377,8 @@ public class AFDGUI extends javax.swing.JFrame {
         transiciones.get("q1").put('y', "q2");
         transiciones.get("q1").put('z', "q2");
         
-        transiciones.get("q2").put('a', "q1");
-        transiciones.get("q2").put('b', "q1");
-        transiciones.get("q2").put('c', "q1");
-        transiciones.get("q2").put('d', "q1");
-        transiciones.get("q2").put('e', "q1");
-        transiciones.get("q2").put('f', "q1");
-        transiciones.get("q2").put('g', "q1");
-        transiciones.get("q2").put('h', "q1");
-        transiciones.get("q2").put('i', "q1");
-        transiciones.get("q2").put('j', "q1");
-        transiciones.get("q2").put('k', "q1");
-        transiciones.get("q2").put('l', "q1");
-        transiciones.get("q2").put('m', "q1");
-        transiciones.get("q2").put('n', "q1");
-        transiciones.get("q2").put('o', "q1");
-        transiciones.get("q2").put('p', "q1");
-        transiciones.get("q2").put('q', "q1");
-        transiciones.get("q2").put('r', "q1");
-        transiciones.get("q2").put('s', "q1");
-        transiciones.get("q2").put('t', "q1");
-        transiciones.get("q2").put('u', "q1");
-        transiciones.get("q2").put('v', "q1");
-        transiciones.get("q2").put('w', "q1");
-        transiciones.get("q2").put('x', "q1");
-        transiciones.get("q2").put('y', "q1");
-        transiciones.get("q2").put('z', "q1");
-        
-        
-        //000110
-        //11101110
-        //Aca
-        //Vaso
-        
-        // Definimos el estado inicial
-        estadoInicial = "q0";
-
-        // Definimos el conjunto de estados de aceptación
-        estadosAceptacion = new String[]{"q2"};
-        
-        String estadoActual = estadoInicial;
-
-        for (char simbolo : cadena.toCharArray()) {
-            if (!transiciones.get(estadoActual).containsKey(simbolo)) {
-                return false; // El símbolo no está en el alfabeto
-            }
-            estadoActual = transiciones.get(estadoActual).get(simbolo);
-        }
-
-        for (String estadoAceptacion : estadosAceptacion) {
-            if (estadoActual.equals(estadoAceptacion)) {
-                return true; // La cadena fue aceptada
-            }
-        }
-        
-        String estadoActualV = estadoInicial;
-
-        for (char simbolo : cadena.toCharArray()) {
-            if (!transiciones.get(estadoActualV).containsKey(simbolo)) {
-                estadoActual = "Error"; // Manejo de errores si el símbolo no está en el alfabeto
-                break;
-            }
-            estadoActualV = transiciones.get(estadoActual).get(simbolo);
-            JOptionPane.showMessageDialog(this, "Símbolo: " + simbolo + ", Estado Actual: " + estadoActual);
-        }
-    
-
         return false;
     }
-    
-    
     
     /**
      * @param args the command line arguments
